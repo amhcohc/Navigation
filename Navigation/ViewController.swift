@@ -20,6 +20,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let editViewController = segue.destination as! EditViewController
+        if segue.identifier == "editButton" {
+            editViewController.textWayValue = "segue : use Button"
+        } else if segue.identifier == "editBarButton" {
+            editViewController.textWayValue = "segue : use Bar Button"
+        }
+    }
 
 }
 
